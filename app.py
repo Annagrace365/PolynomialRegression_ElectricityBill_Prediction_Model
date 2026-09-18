@@ -4,7 +4,7 @@ from sklearn.preprocessing import PolynomialFeatures
 
 model=joblib.load("polynomial_regression_electricitybill_prediction_model.pkl")
 st.title("Electricity Bill Prediction Based On AC Units")
-ac_units=st.number_input("Enter AC Units : ", min_value=0.0, value=100.0)
+ac_units=st.number_input("Enter AC Units : ", min_value=1.0, value=100.0,max_value=149.0)
 if st.button("Predict"):
   poly=PolynomialFeatures()
   ac_units_poly=poly.fit_transform([[ac_units]])
